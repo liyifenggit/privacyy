@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>[APP_NAME] 隐私政策</title>
+  <meta name="description" content="[APP_NAME] 隐私政策，说明我们如何处理用户数据与隐私。">
+  <style>
+    :root {
+      --bg:#0b0f14; --card:#111927; --text:#e6edf3; --muted:#9fb0c0; --brand:#4aa3ff; --ok:#56d364; --warn:#f7b955;
+    }
+    html,body { margin:0; padding:0; background:linear-gradient(180deg,#0b0f14,#0a1322 50%, #0b0f14); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,PingFang SC,Microsoft YaHei,Source Han Sans SC,Noto Sans CJK SC,sans-serif; }
+    .wrap { max-width:980px; margin:0 auto; padding:40px 20px 80px; }
+    header { text-align:center; margin-bottom:24px; }
+    h1 { font-size:32px; margin:0 0 8px; letter-spacing: .5px; }
+    .subtitle { color:var(--muted); font-size:14px; }
+    .card { background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.06); border-radius:14px; padding:22px; margin:18px 0; }
+    h2 { font-size:20px; margin:0 0 10px; }
+    p, li { line-height:1.75; color:var(--text); }
+    a { color:var(--brand); text-decoration:none; }
+    a:hover { text-decoration:underline; }
+    .tag { display:inline-block; padding:2px 8px; font-size:12px; border-radius:999px; border:1px solid rgba(255,255,255,0.12); color:var(--muted); margin:2px 8px 2px 0; }
+    .ok { color:var(--ok); border-color:rgba(86,211,100,.35); }
+    .warn { color:var(--warn); border-color:rgba(247,185,85,.35); }
+    details { margin:10px 0; }
+    summary { cursor:pointer; color:var(--brand); }
+    footer { margin-top:36px; color:var(--muted); font-size:13px; text-align:center; }
+    .grid { display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); }
+    .muted { color:var(--muted); }
+    .list-clean { margin: 8px 0 0; padding-left: 18px; }
+    code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>[APP_NAME] 隐私政策</h1>
+      <div class="subtitle">
+        最近更新：[LAST_UPDATED] · 适用平台：iOS / watchOS / tvOS
+      </div>
+    </header>
+
+    <section class="card">
+      <p>
+        欢迎使用 <strong>[APP_NAME]</strong>（以下简称“本应用”）。我们重视您的隐私与数据安全。本隐私政策旨在清晰说明本应用如何在
+        <strong>iOS、watchOS、tvOS</strong> 平台上处理您的数据。本应用奉行“最小化收集原则”，
+        <span class="tag ok">不用于广告跟踪</span><span class="tag ok">不出售用户数据</span><span class="tag ok">不进行跨应用/跨网站跟踪</span>。
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>1. 我们收集哪些信息</h2>
+      <p>默认情况下，本应用 <strong>不主动收集可识别个人身份的信息（PII）</strong>。在本地仅会保存为实现播放功能所必须的有限数据：</p>
+      <ul class="list-clean">
+        <li><strong>播放队列与历史</strong>：用于“继续播放”“最近播放”等功能，存储于设备本地（如 UserDefaults / App Group）。</li>
+        <li><strong>收藏/偏好设置</strong>：例如循环/随机模式、界面偏好，存储于设备本地。</li>
+        <li><strong>离线缓存状态</strong>：如已下载歌曲的本地可用性，仅用于离线播放。</li>
+      </ul>
+      <p class="muted">
+        注：若你在设置中启用崩溃日志/性能诊断（如适配第三方崩溃分析 SDK），仅收集匿名化设备信息与崩溃堆栈 <em>（不包含个人身份信息）</em>，
+        且仅用于改进稳定性。此类选项默认关闭，开启前会明确征求同意。
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>2. 数据处理与存储位置</h2>
+      <ul class="list-clean">
+        <li><strong>本地存储</strong>：播放队列、偏好设置、离线文件等仅保留在您的设备或 App Group 容器内。</li>
+        <li><strong>设备间通信</strong>（iPhone ↔ Apple Watch）：使用 <code>WatchConnectivity</code> 进行命令与状态同步，消息内容仅用于播放控制与显示，不会上传到我们的服务器。</li>
+        <li><strong>tvOS 顶层内容（Top Shelf）</strong>：如展示“继续播放/最近播放”，由系统读取扩展提供的数据，仅用于 Apple TV 主屏显示。</li>
+        <li><strong>网络访问</strong>：若您配置了私有媒体服务器/云盘地址，本应用仅按您的指令访问该地址以播放或下载，<strong>不经由我们自有服务器中转</strong>。</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>3. 第三方与共享</h2>
+      <ul class="list-clean">
+        <li><strong>不与第三方共享个人数据</strong>，不进行广告或营销用途的数据分享。</li>
+        <li>若你连接私有服务器（如 WebDAV/自建媒体库），该服务器的数据处理由你与服务器提供方自行决定并遵守相应隐私政策。</li>
+        <li>操作系统供应商（Apple）可能会基于系统功能收集匿名统计（与本应用无直接控制关系）。</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>4. 儿童隐私</h2>
+      <p>
+        我们不会主动收集儿童的个人信息。如你认为我们在未经监护人同意的情况下收集了儿童的信息，请通过
+        <a href="mailto:[CONTACT_EMAIL]">[CONTACT_EMAIL]</a> 联系我们处理。
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>5. 数据安全</h2>
+      <ul class="list-clean">
+        <li>采用系统提供的沙盒与权限机制，防止无关应用访问本地数据。</li>
+        <li>仅在需要时访问网络；优先使用 <strong>HTTPS/TLS</strong> 加密通道。</li>
+        <li>你可随时删除应用以清除本地数据；若有离线文件，随应用一并移除。</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>6. 你的权利</h2>
+      <ul class="list-clean">
+        <li><strong>访问与更正</strong>：你可通过应用内界面查看/修改相关设置与状态。</li>
+        <li><strong>删除</strong>：你可以手动删除离线文件，或卸载应用以清除全部本地数据。</li>
+        <li><strong>同意撤回</strong>：如启用了崩溃/性能诊断，可在设置中关闭。</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>7. 国际与地区合规</h2>
+      <p>
+        若你位于具备更严格隐私法规的地区（如 GDPR/CCPA 适用地区），我们将按照“最小化收集、仅本地处理”的原则运行。
+        如需落实特定地区请求（如数据访问/导出/删除），请通过 <a href="mailto:[CONTACT_EMAIL]">[CONTACT_EMAIL]</a> 联系，我们将在合理期限内回应。
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>8. 政策变更</h2>
+      <p>
+        我们可能会不时更新本隐私政策（例如功能变更或法律要求）。更新后会在本页面公布并标注“最近更新”日期。
+        重大变更将通过应用内或官网进行显著提示。你继续使用本应用即表示同意更新后的政策。
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>9. 联系我们</h2>
+      <ul class="list-clean">
+        <li>开发者/公司：<strong>[liyongzong]</strong></li>
+        <li>联系邮箱：<a href="mailto:[475191923@qq.com]">[CONTACT_EMAIL]</a></li>
+        <li>网站/支持页：<a href="[https://liyifenggit.github.io/support/]" target="_blank" rel="noopener">[WEBSITE_URL]</a></li>
+      </ul>
+      <details>
+        <summary>开发者说明（面向审核与技术人员）</summary>
+        <div class="muted">
+          <p>• 使用的系统能力：App Groups（用于 iOS 与扩展/小组件共享只读状态）、WatchConnectivity（双端播放状态/控制同步）、Top Shelf Extension（tvOS 顶层内容）、UserDefaults/文件系统（本地缓存与设置）。</p>
+          <p>• 默认不内置第三方统计/广告 SDK；如后续加入崩溃分析（仅匿名诊断），会在设置中提供开关并在本政策更新。</p>
+          <p>• 不上传用户媒体至自有服务器；播放/下载仅直连用户配置的私有来源。</p>
+        </div>
+      </details>
+    </section>
+
+    <footer>
+      <div>© <span id="year"></span> [liyongzong]. 保留所有权利。</div>
+      <div class="muted">本页面仅用于说明 <strong>[APP_NAME]</strong> 在 iOS / watchOS / tvOS 平台上的隐私实践。</div>
+    </footer>
+  </div>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
